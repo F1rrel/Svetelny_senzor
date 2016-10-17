@@ -1,18 +1,17 @@
 # Svetelny_senzor
 
-Filip Štec
-17.10.2016
+##Program arduino pre Svetelny Senzor
 
-Program arduino pre svetelny stabilizator
+####Vlastnosti
+- Ovladanie motora pomocou DRV8824
+- Snimanie lasera dvoma snimacmi TSL1402R
+- Signalizacia upozorneni na dvojfarebnej led
+- Automatizovane zarovnanie pri detekovani lasera
+- Detekcia silneho ambientneho svetla : cervena led
+- Detekcia lasera na snimacoch : zlta led
+- Nastaveny motor na 1/32 microstepping
+- Vyvod uhla po Arduino Rx, Tx
+- Vypisovanie krokov motora, aktualu poziciu lasera a errory po Arduino Rx, Tx
+- Nastavovanie hodnot Laser a Ambient cez Rx, Tx
+- Ovládanie motora cez Rx, Tx
 
-o Ovladanie motora pomocou DRV8824
-o Snimanie lasera dvoma snimacmi TSL1402R
-o Signalizacia upozorneni na dvojfarebnej led
-o Automatizovane zarovnanie pri detekovani lasera
-o Detekcia silneho ambientneho svetla : cervena led
-o Detekcia lasera na snimacoch : zlta led
-o Nastaveny motor na 1/32 microstepping
-o Vyvod uhla po Arduino Rx, Tx
-o Vypisovanie krokov motora, aktualu poziciu lasera a errory po Arduino Rx, Tx
-o Nastavovanie hodnot Laser a Ambient cez Rx, Tx
-o Ovládanie motora cez Rx, Tx
