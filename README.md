@@ -1,6 +1,5 @@
 # Svetelny_senzor
-
-##Program arduino pre Svetelny Senzor
+Program pre Arduino
 
 ####Vlastnosti
 - Ovladanie motora pomocou DRV8824
@@ -14,4 +13,3 @@
 - Vypisovanie krokov motora, aktualu poziciu lasera a errory po Arduino Rx, Tx
 - Nastavovanie hodnot Laser a Ambient cez Rx, Tx
 - Ovládanie motora cez Rx, Tx
-
