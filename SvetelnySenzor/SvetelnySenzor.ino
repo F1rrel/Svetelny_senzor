@@ -49,7 +49,7 @@ float Angle;
 
 AccelStepper stepper(AccelStepper::DRIVER, stp, dir); // step/dir control
 #define mstep 32  // microstep resolution
-#define pstep 10.08    //  steps per pixel
+#define pstep 10.35    //  steps per pixel
 
 //-----------------------
 // Serial variables
@@ -94,7 +94,7 @@ void loop()
        
         if (Sensor( &Peak1, AOpin1, AOpin2, true ) == 1000)
         {
-          delay(2000);
+          delay(5000);
         }
         else if (Peak1 < 130 && Peak1 > 124)
         {
@@ -172,7 +172,7 @@ void loop()
           Serial.println(Angle);
           step = 0;
         }
-        delay(2000);
+        delay(5000);
         break;        
       }
   }

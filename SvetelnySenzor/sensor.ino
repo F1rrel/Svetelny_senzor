@@ -8,11 +8,16 @@ word Sensor( int* Peak, byte pin1, byte pin2, boolean type )
   {
     while (i < 10)
     {
-      readSensor( Data, pin1, pin2 );    
-      if ((PeakP = calcPeak( Data )) == 1000)
+      readSensor( Data, pin1, pin2 );   
+      PeakP = calcPeak( Data ); 
+      if (PeakP == 1000)
       {
         *Peak = PeakP;
         return 1000;
+      }
+      else if ((PeakP > 256) || (PeakP <0))
+      {
+        i = 0;
       }
       else if (abs(*Peak - PeakP) < 3)
       {
@@ -23,7 +28,9 @@ word Sensor( int* Peak, byte pin1, byte pin2, boolean type )
         i = 0;
         *Peak = PeakP;
       }
-      delay(100); // delay between values
+      delay(500); // delay between values
+      Serial.print("PeakTest: ");
+      Serial.println(PeakP);
     }
   }
   else
@@ -141,6 +148,12 @@ word calcPeak( word* Data )
   {
     return MaxData[0];
   }
+  else if (n == 1)
+  {
+    Length = MaxData[1] - MaxData[0];
+    Peak = (int)(Length/2) + MaxData[0];
+    return Peak;
+  }
   else
   {
     for (int i = 0; i < n; i++) 
@@ -148,13 +161,13 @@ word calcPeak( word* Data )
       if ((((MaxData[i + 1] - MaxData[i]) > 5) || (i == n - 1)) && ((MaxData[i] - Min) > Length))
       {
         Length = MaxData[i] - Min;
-        Peak = (MaxData[i] + Min) / 2;
+        Peak = (int)((MaxData[i] + Min) / 2);
         Min = MaxData[i + 1];
       }
       else if ((i == n - 1) && ((MaxData[i] - Min) > Length))
       {
         Length = MaxData[n] - Min;
-        Peak = (MaxData[n] + Min) / 2;
+        Peak = (int)((MaxData[n] + Min) / 2);
       }
     }
   }
