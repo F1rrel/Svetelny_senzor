@@ -1,7 +1,7 @@
 # Svetelny_senzor
 Program pre Arduino
 
-###Vlastnosti
+## Vlastnosti
 - Ovladanie motora pomocou DRV8824
 - Snimanie lasera dvoma snimacmi TSL1402R
 - Signalizacia upozorneni na dvojfarebnej led
@@ -14,7 +14,7 @@ Program pre Arduino
 - Nastavovanie hodnot Laser a Ambient cez Rx, Tx
 - Ovládanie motora cez Rx, Tx
 
-###Prikazy
+## Prikazy
 - Nastavenie citlivosti na ambientne svetlo
   - `<AMB> xxxx` kde hodnota je medzi 1-250
   - cim mensie cislo, tym vacsia citlivost
